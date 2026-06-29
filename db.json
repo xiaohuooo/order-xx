@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 9,
-          "name": "芒果冰沙",
-          "emoji": "🥭",
-          "qty": 1,
-          "price": "说爱我"
-        }
-      ],
-      "note": "异地恋云同步终极测试！🥭",
-      "status": "done",
-      "id": "od_1780560714316",
-      "_firestoreId": "od_1780560714316",
-      "time": "2026-06-04T08:11:54.316Z",
-      "timeDisplay": "2026/6/4 16:11:54"
-    },
-    {
-      "items": [
-        {
           "productId": 4,
           "name": "打视频电话",
           "emoji": "📹",
