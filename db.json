@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 5,
-          "name": "一起散步",
-          "price": "30分钟",
-          "emoji": "🚶",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561322264",
-      "_firestoreId": "od_1780561322264",
-      "time": "2026-06-04T08:22:02.264Z",
-      "timeDisplay": "2026/6/4 16:22:02"
-    },
-    {
-      "items": [
-        {
           "productId": 7,
           "name": "抱抱",
           "price": "免费",
