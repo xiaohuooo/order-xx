@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 6,
-          "name": "分享日常",
-          "price": "免费",
-          "emoji": "📸",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561150367",
-      "_firestoreId": "od_1780561150367",
-      "time": "2026-06-04T08:19:10.367Z",
-      "timeDisplay": "2026/6/4 16:19:10"
-    },
-    {
-      "items": [
-        {
           "productId": 12,
           "name": "巧克力",
           "price": "一个亲亲",
