@@ -181,23 +181,6 @@
           "qty": 1
         }
       ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575838518",
-      "_firestoreId": "od_1780575838518",
-      "time": "2026-06-04T12:23:58.518Z",
-      "timeDisplay": "2026/6/4 20:23:58"
-    },
-    {
-      "items": [
-        {
-          "productId": 8,
-          "name": "一起追剧",
-          "price": "2小时",
-          "emoji": "📺",
-          "qty": 1
-        }
-      ],
       "note": "甄嬛传",
       "status": "pending",
       "id": "od_1782716045424",
