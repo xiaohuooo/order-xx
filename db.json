@@ -347,23 +347,6 @@
       "_firestoreId": "od_1782716045424",
       "time": "2026-06-29T06:54:05.424Z",
       "timeDisplay": "2026/6/29 14:54:05"
-    },
-    {
-      "items": [
-        {
-          "productId": 2,
-          "name": "随机奶茶(可备注)",
-          "price": "亲一口",
-          "emoji": "🧋",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "pending",
-      "id": "od_1782717252594",
-      "_firestoreId": "od_1782717252594",
-      "time": "2026-06-29T07:14:12.594Z",
-      "timeDisplay": "2026/6/29 15:14:12"
     }
   ],
   "tk1": "ghp_cwNvByD8dfoktJej",
