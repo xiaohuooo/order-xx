@@ -115,6 +115,23 @@
       "_firestoreId": "od_1782716045424",
       "time": "2026-06-29T06:54:05.424Z",
       "timeDisplay": "2026/6/29 14:54:05"
+    },
+    {
+      "items": [
+        {
+          "productId": 14,
+          "name": "随便饭(可备注)",
+          "price": "十个亲亲",
+          "emoji": "",
+          "qty": 1
+        }
+      ],
+      "note": "十个亲亲！！！？我要吃汉堡",
+      "status": "pending",
+      "id": "od_1782719152290",
+      "_firestoreId": "od_1782719152290",
+      "time": "2026-06-29T07:45:52.290Z",
+      "timeDisplay": "2026/6/29 15:45:52"
     }
   ],
   "tk1": "ghp_aOxRVn2sJJ6Hm4Idm",
