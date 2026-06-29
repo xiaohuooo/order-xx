@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 1,
-          "name": "冰淇淋",
-          "emoji": "🍦",
-          "qty": 1,
-          "price": "一个抱抱"
-        }
-      ],
-      "note": "全链路测试",
-      "status": "done",
-      "id": "od_1780560928321",
-      "_firestoreId": "od_1780560928321",
-      "time": "2026-06-04T08:15:28.321Z",
-      "timeDisplay": "2026/6/4 16:15:28"
-    },
-    {
-      "items": [
-        {
           "productId": 6,
           "name": "分享日常",
           "price": "免费",
