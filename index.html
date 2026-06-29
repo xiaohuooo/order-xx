@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍯 蜂蜜小铺</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decor">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- 浮动爱心容器 -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <div class="logo-wrap">
+                    <span class="logo-icon">🍯</span>
+                    <div class="logo-text">
+                        <h1 class="logo-title">蜂蜜小铺</h1>
+                        <p class="logo-sub">香甜温暖，每一口都是幸福！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn-cart" onclick="toggleCart()">
+                    <span class="btn-cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </span>
+                    <span class="btn-cart-text">购物车</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 分类导航 -->
+    <nav class="category-nav">
+        <div class="category-list" id="categoryList"></div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="section-title">
+            <span class="title-dot"></span>
+            <h2>今日推荐</h2>
+            <span class="title-line"></span>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <p>💌 给最爱的宝宝 · 永远满足你的小心愿 💌</p>
+    </footer>
+
+    <!-- 购物车侧边栏 -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <div class="cart-header-title">
+                <span class="cart-header-icon">🛒</span>
+                <h2>我的购物车</h2>
+            </div>
+            <button class="btn-close" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty-state">
+                <div class="cart-empty-emoji">🛍️</div>
+                <p class="cart-empty-text">购物车空空如也~</p>
+                <p class="cart-empty-sub">快去选点什么吧！</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>商品件数</span>
+                    <span class="cart-summary-value">共 <strong id="cartCount">0</strong> 件</span>
+                </div>
+            </div>
+            <div class="cart-note-wrap">
+                <label class="cart-note-label">
+                    <i class="fas fa-pen"></i> 给男朋友留个言
+                </label>
+                <textarea class="cart-note" id="cartNote" placeholder="写点什么甜甜的话吧..." rows="2"></textarea>
+            </div>
+            <button class="btn-submit-order" onclick="submitOrder()">
+                <span class="btn-submit-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </span>
+                <span>下单啦~</span>
+                <span class="btn-shine"></span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toastIcon">✓</span>
+        <span class="toast-text" id="toastText"></span>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
