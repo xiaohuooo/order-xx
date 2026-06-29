@@ -195,23 +195,6 @@
           "name": "一起追剧",
           "price": "2小时",
           "emoji": "📺",
-          "qty": 4
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575896230",
-      "_firestoreId": "od_1780575896230",
-      "time": "2026-06-04T12:24:56.230Z",
-      "timeDisplay": "2026/6/4 20:24:56"
-    },
-    {
-      "items": [
-        {
-          "productId": 8,
-          "name": "一起追剧",
-          "price": "2小时",
-          "emoji": "📺",
           "qty": 1
         }
       ],
