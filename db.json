@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 12,
-          "name": "巧克力",
-          "price": "一个亲亲",
-          "emoji": "🍫",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561266088",
-      "_firestoreId": "od_1780561266088",
-      "time": "2026-06-04T08:21:06.088Z",
-      "timeDisplay": "2026/6/4 16:21:06"
-    },
-    {
-      "items": [
-        {
           "productId": 5,
           "name": "一起散步",
           "price": "30分钟",
