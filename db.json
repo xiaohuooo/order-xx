@@ -85,23 +85,6 @@
     {
       "items": [
         {
-          "productId": 7,
-          "name": "抱抱",
-          "price": "免费",
-          "emoji": "🤗",
-          "qty": 1
-        }
-      ],
-      "note": "GitHub端全链路测试 17:40:35",
-      "status": "done",
-      "id": "od_1780566035415",
-      "_firestoreId": "od_1780566035415",
-      "time": "2026-06-04T09:40:35.415Z",
-      "timeDisplay": "2026/6/4 17:40:35"
-    },
-    {
-      "items": [
-        {
           "productId": 8,
           "name": "一起追剧",
           "price": "2小时",
