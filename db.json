@@ -126,23 +126,6 @@
     {
       "items": [
         {
-          "productId": 1,
-          "name": "冰淇淋",
-          "price": "一张美照",
-          "emoji": "🍦",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575692856",
-      "_firestoreId": "od_1780575692856",
-      "time": "2026-06-04T12:21:32.856Z",
-      "timeDisplay": "2026/6/4 20:21:32"
-    },
-    {
-      "items": [
-        {
           "productId": 8,
           "name": "一起追剧",
           "price": "2小时",
