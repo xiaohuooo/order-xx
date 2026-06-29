@@ -215,7 +215,6 @@ function showSuccessAnimation(callback) {
     div.innerHTML = `
         <div class="success-icon">💖</div>
         <div class="success-text">下单成功！</div>
-        <div class="success-sub">男朋友马上就会收到你的消息~</div>
     `;
 
     document.body.appendChild(div);

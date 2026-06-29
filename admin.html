@@ -6,7 +6,7 @@
     <title>🐝 蜂蜜小铺 - 后台管理</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
     <!-- 背景装饰 -->
@@ -24,7 +24,6 @@
                     <span class="logo-icon">🔧 </span>
                     <div class="logo-text">
                         <h1 class="logo-title">后台管理</h1>
-                        <p class="logo-sub">管理订单和商品~</p>
                     </div>
                 </div>
             </div>
@@ -151,218 +150,219 @@
 
     <script src="js/data.js"></script>
     <script>
-// ========== 后台管理逻辑（内嵌版） ==========
-var currentTab = 'orders';
-var orderFilter = 'all';
-var editingProductId = null;
-var unsubscribeOrders = null;
+        // ========== 后台管理逻辑（内嵌版） ==========
+        var currentTab = 'orders';
+        var orderFilter = 'all';
+        var editingProductId = null;
+        var unsubscribeOrders = null;
 
-document.addEventListener('DOMContentLoaded', function() {
-    initDefaultProducts().then(function() {
-        return getOrders();
-    }).then(function(orders) {
-        renderOrdersFromData(orders);
-        updateOrderBadge();
-        startOrdersListener();
-        renderProductsAdmin();
-    });
-});
-
-function switchTab(tab) {
-    currentTab = tab;
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
-    var btns = document.querySelectorAll('.tab-btn');
-    if (tab === 'orders') btns[0].classList.add('active');
-    else btns[1].classList.add('active');
-    document.getElementById(tab === 'orders' ? 'ordersPanel' : 'productsPanel').classList.add('active');
-    if (tab === 'orders') getOrders().then(function(orders) { renderOrdersFromData(orders); });
-    if (tab === 'products') renderProductsAdmin();
-}
-
-function startOrdersListener() {
-    unsubscribeOrders = onOrdersSnapshot(function(orders) {
-        renderOrdersFromData(orders);
-        updateOrderBadge();
-    });
-}
-
-function renderOrdersFromData(orders) {
-    var filtered = orderFilter === 'all' ? orders : orders.filter(function(o) { return o.status === orderFilter; });
-    renderOrderCards(filtered);
-}
-
-function renderOrderCards(filtered) {
-    var container = document.getElementById('ordersList');
-    if (filtered.length === 0) {
-        container.innerHTML = '<div class="empty-state"><div class="empty-emoji">�</div><p class="empty-text">暂无订单~</p><p class="empty-sub">快让她来下单吧！</p></div>';
-        return;
-    }
-    // 最新订单在最上面
-    var sorted = filtered.slice().reverse();
-    container.innerHTML = sorted.map(function(order) {
-        var itemsHTML = order.items.map(function(item) {
-            return '<span class="order-item-tag"><span class="tag-emoji">' + (item.emoji || '') + '</span>' + item.name + ' ×' + item.qty + '</span>';
-        }).join('');
-        var noteHTML = order.note ? '<div class="order-note"><i class="fas fa-quote-left"></i> ' + escapeHtml(order.note) + ' <i class="fas fa-quote-right"></i></div>' : '';
-        var doneBtn = order.status === 'pending' ?
-            '<button class="btn-sm btn-done" onclick="doneOrder(\'' + order._firestoreId + '\')"><i class="fas fa-check"></i> 标记完成</button>' : '';
-        return '<div class="order-card ' + order.status + '">' +
-            '<div class="order-card-header">' +
-                '<span class="order-time"><i class="far fa-clock"></i> ' + (order.timeDisplay || '') + '</span>' +
-                '<span class="order-status ' + order.status + '">' + (order.status === 'pending' ? '⏳ 待处理' : '✅ 已完成') + '</span>' +
-            '</div>' +
-            '<div class="order-items">' + itemsHTML + '</div>' +
-            noteHTML +
-            '<div class="order-actions">' + doneBtn +
-                '<button class="btn-sm btn-delete" onclick="removeOrder(\'' + order._firestoreId + '\')"><i class="fas fa-trash"></i> 删除</button>' +
-            '</div>' +
-        '</div>';
-    }).join('');
-}
-
-function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-function filterOrders(filter) {
-    orderFilter = filter;
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    var btns = document.querySelectorAll('.filter-btn');
-    if (filter === 'all') btns[0].classList.add('active');
-    else if (filter === 'pending') btns[1].classList.add('active');
-    else btns[2].classList.add('active');
-    getOrders().then(function(orders) { renderOrdersFromData(orders); });
-}
-
-function doneOrder(id) {
-    markOrderDone(id).then(function() {
-        getOrders().then(function(orders) { renderOrdersFromData(orders); });
-        updateOrderBadge();
-        showToast('已标记为完成 ✅', 'success');
-    });
-}
-
-function removeOrder(id) {
-    if (confirm('确定要删除这个订单吗？')) {
-        deleteOrder(id).then(function() {
-            getOrders().then(function(orders) { renderOrdersFromData(orders); });
-            updateOrderBadge();
-            showToast('订单已删除', 'success');
+        document.addEventListener('DOMContentLoaded', function () {
+            initDefaultProducts().then(function () {
+                return getOrders();
+            }).then(function (orders) {
+                renderOrdersFromData(orders);
+                updateOrderBadge();
+                startOrdersListener();
+                renderProductsAdmin();
+            });
         });
-    }
-}
 
-function updateOrderBadge() {
-    getPendingCount().then(function(count) {
-        var badge = document.getElementById('orderBadge');
-        if (badge) {
-            badge.textContent = count;
-            badge.style.display = count > 0 ? 'inline-flex' : 'none';
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+            document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+            var btns = document.querySelectorAll('.tab-btn');
+            if (tab === 'orders') btns[0].classList.add('active');
+            else btns[1].classList.add('active');
+            document.getElementById(tab === 'orders' ? 'ordersPanel' : 'productsPanel').classList.add('active');
+            if (tab === 'orders') getOrders().then(function (orders) { renderOrdersFromData(orders); });
+            if (tab === 'products') renderProductsAdmin();
         }
-    });
-}
 
-function renderProductsAdmin() {
-    getProducts().then(function(products) {
-        var container = document.getElementById('productsAdminList');
-        if (products.length === 0) {
-            container.innerHTML = '<div class="empty-state"><div class="empty-emoji">📦</div><p class="empty-text">还没有商品~</p><p class="empty-sub">点击右上角添加吧！</p></div>';
-            return;
+        function startOrdersListener() {
+            unsubscribeOrders = onOrdersSnapshot(function (orders) {
+                renderOrdersFromData(orders);
+                updateOrderBadge();
+            });
         }
-        container.innerHTML = products.map(function(p) {
-            var catInfo = (CATEGORIES[p.category] ? CATEGORIES[p.category].icon + ' ' + CATEGORIES[p.category].name : p.category);
-            return '<div class="product-admin-item">' +
-                '<div class="product-admin-emoji-wrap"><span class="product-admin-emoji">' + (p.emoji || '🎁') + '</span></div>' +
-                '<div class="product-admin-info">' +
-                    '<div class="product-admin-name">' + escapeHtml(p.name) + '</div>' +
-                    '<div class="product-admin-meta"><span class="meta-tag">' + catInfo + '</span><span class="meta-divider">·</span><span class="meta-price">' + escapeHtml(p.price) + '</span>' + (p.desc ? '<span class="meta-divider">·</span><span class="meta-desc">' + escapeHtml(p.desc) + '</span>' : '') + '</div>' +
-                '</div>' +
-                '<div class="product-admin-actions">' +
-                    '<button class="btn-icon" title="编辑" onclick="editProduct(' + p.id + ')"><i class="fas fa-pen"></i></button>' +
-                    '<button class="btn-icon danger" title="删除" onclick="removeProduct(' + p.id + ')"><i class="fas fa-trash"></i></button>' +
-                '</div>' +
-            '</div>';
-        }).join('');
-    });
-}
 
-function showAddProduct() {
-    editingProductId = null;
-    document.getElementById('modalTitle').textContent = '添加商品';
-    document.getElementById('modalIcon').textContent = '➕';
-    document.getElementById('btnSaveProduct').innerHTML = '<i class="fas fa-plus"></i> 添加';
-    clearProductForm();
-    document.getElementById('productModal').classList.add('show');
-}
+        function renderOrdersFromData(orders) {
+            var filtered = orderFilter === 'all' ? orders : orders.filter(function (o) { return o.status === orderFilter; });
+            renderOrderCards(filtered);
+        }
 
-function editProduct(id) {
-    getProducts().then(function(products) {
-        var product = products.find(function(p) { return p.id === id; });
-        if (!product) return;
-        editingProductId = id;
-        document.getElementById('modalTitle').textContent = '编辑商品';
-        document.getElementById('modalIcon').textContent = '✏️';
-        document.getElementById('btnSaveProduct').innerHTML = '<i class="fas fa-check"></i> 保存修改';
-        document.getElementById('editProductId').value = id;
-        document.getElementById('productName').value = product.name;
-        document.getElementById('productCategory').value = product.category;
-        document.getElementById('productPrice').value = product.price;
-        document.getElementById('productEmoji').value = product.emoji || '';
-        document.getElementById('productDesc').value = product.desc || '';
-        document.getElementById('productModal').classList.add('show');
-    });
-}
+        function renderOrderCards(filtered) {
+            var container = document.getElementById('ordersList');
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-emoji">�</div><p class="empty-text">暂无订单~</p><p class="empty-sub">快让她来下单吧！</p></div>';
+                return;
+            }
+            // 最新订单在最上面
+            var sorted = filtered.slice().reverse();
+            container.innerHTML = sorted.map(function (order) {
+                var itemsHTML = order.items.map(function (item) {
+                    return '<span class="order-item-tag"><span class="tag-emoji">' + (item.emoji || '') + '</span>' + item.name + ' ×' + item.qty + '</span>';
+                }).join('');
+                var noteHTML = order.note ? '<div class="order-note"><i class="fas fa-quote-left"></i> ' + escapeHtml(order.note) + ' <i class="fas fa-quote-right"></i></div>' : '';
+                var doneBtn = order.status === 'pending' ?
+                    '<button class="btn-sm btn-done" onclick="doneOrder(\'' + order._firestoreId + '\')"><i class="fas fa-check"></i> 标记完成</button>' : '';
+                return '<div class="order-card ' + order.status + '">' +
+                    '<div class="order-card-header">' +
+                    '<span class="order-time"><i class="far fa-clock"></i> ' + (order.timeDisplay || '') + '</span>' +
+                    '<span class="order-status ' + order.status + '">' + (order.status === 'pending' ? '⏳ 待处理' : '✅ 已完成') + '</span>' +
+                    '</div>' +
+                    '<div class="order-items">' + itemsHTML + '</div>' +
+                    noteHTML +
+                    '<div class="order-actions">' + doneBtn +
+                    '<button class="btn-sm btn-delete" onclick="removeOrder(\'' + order._firestoreId + '\')"><i class="fas fa-trash"></i> 删除</button>' +
+                    '</div>' +
+                    '</div>';
+            }).join('');
+        }
 
-function closeProductModal() { document.getElementById('productModal').classList.remove('show'); clearProductForm(); }
-function clearProductForm() {
-    document.getElementById('editProductId').value = '';
-    document.getElementById('productName').value = '';
-    document.getElementById('productCategory').value = 'food';
-    document.getElementById('productPrice').value = '';
-    document.getElementById('productEmoji').value = '';
-    document.getElementById('productDesc').value = '';
-}
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
 
-function saveProduct() {
-    var name = document.getElementById('productName').value.trim();
-    var category = document.getElementById('productCategory').value;
-    var price = document.getElementById('productPrice').value.trim();
-    var emoji = document.getElementById('productEmoji').value.trim();
-    var desc = document.getElementById('productDesc').value.trim();
-    if (!name) { showToast('请输入商品名称', 'error'); return; }
-    if (!price) { showToast('请输入价格或描述', 'error'); return; }
-    var id = document.getElementById('editProductId').value;
-    var promise = id ? updateProduct(parseInt(id), { name: name, category: category, price: price, emoji: emoji, desc: desc }) : addProduct({ name: name, category: category, price: price, emoji: emoji, desc: desc });
-    promise.then(function() {
-        showToast(id ? '商品已更新 ✅' : '商品已添加 🎉', 'success');
-        closeProductModal();
-        renderProductsAdmin();
-    });
-}
+        function filterOrders(filter) {
+            orderFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+            var btns = document.querySelectorAll('.filter-btn');
+            if (filter === 'all') btns[0].classList.add('active');
+            else if (filter === 'pending') btns[1].classList.add('active');
+            else btns[2].classList.add('active');
+            getOrders().then(function (orders) { renderOrdersFromData(orders); });
+        }
 
-function removeProduct(id) {
-    if (confirm('确定要删除这个商品吗？')) {
-        deleteProduct(id).then(function() { renderProductsAdmin(); showToast('商品已删除', 'success'); });
-    }
-}
+        function doneOrder(id) {
+            markOrderDone(id).then(function () {
+                getOrders().then(function (orders) { renderOrdersFromData(orders); });
+                updateOrderBadge();
+                showToast('已标记为完成 ✅', 'success');
+            });
+        }
 
-function showToast(msg, type) {
-    var toast = document.getElementById('toast');
-    toast.querySelector('.toast-text').textContent = msg;
-    var iconEl = toast.querySelector('.toast-icon');
-    iconEl.innerHTML = type === 'error' ? '<i class="fas fa-exclamation"></i>' : '<i class="fas fa-check"></i>';
-    toast.className = 'toast ' + (type || '') + ' show';
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(function() { toast.classList.remove('show'); }, 2200);
-}
+        function removeOrder(id) {
+            if (confirm('确定要删除这个订单吗？')) {
+                deleteOrder(id).then(function () {
+                    getOrders().then(function (orders) { renderOrdersFromData(orders); });
+                    updateOrderBadge();
+                    showToast('订单已删除', 'success');
+                });
+            }
+        }
 
-document.addEventListener('click', function(e) {
-    var modal = document.getElementById('productModal');
-    if (e.target === modal) closeProductModal();
-});
+        function updateOrderBadge() {
+            getPendingCount().then(function (count) {
+                var badge = document.getElementById('orderBadge');
+                if (badge) {
+                    badge.textContent = count;
+                    badge.style.display = count > 0 ? 'inline-flex' : 'none';
+                }
+            });
+        }
+
+        function renderProductsAdmin() {
+            getProducts().then(function (products) {
+                var container = document.getElementById('productsAdminList');
+                if (products.length === 0) {
+                    container.innerHTML = '<div class="empty-state"><div class="empty-emoji">📦</div><p class="empty-text">还没有商品~</p><p class="empty-sub">点击右上角添加吧！</p></div>';
+                    return;
+                }
+                container.innerHTML = products.map(function (p) {
+                    var catInfo = (CATEGORIES[p.category] ? CATEGORIES[p.category].icon + ' ' + CATEGORIES[p.category].name : p.category);
+                    return '<div class="product-admin-item">' +
+                        '<div class="product-admin-emoji-wrap"><span class="product-admin-emoji">' + (p.emoji || '🎁') + '</span></div>' +
+                        '<div class="product-admin-info">' +
+                        '<div class="product-admin-name">' + escapeHtml(p.name) + '</div>' +
+                        '<div class="product-admin-meta"><span class="meta-tag">' + catInfo + '</span><span class="meta-divider">·</span><span class="meta-price">' + escapeHtml(p.price) + '</span>' + (p.desc ? '<span class="meta-divider">·</span><span class="meta-desc">' + escapeHtml(p.desc) + '</span>' : '') + '</div>' +
+                        '</div>' +
+                        '<div class="product-admin-actions">' +
+                        '<button class="btn-icon" title="编辑" onclick="editProduct(' + p.id + ')"><i class="fas fa-pen"></i></button>' +
+                        '<button class="btn-icon danger" title="删除" onclick="removeProduct(' + p.id + ')"><i class="fas fa-trash"></i></button>' +
+                        '</div>' +
+                        '</div>';
+                }).join('');
+            });
+        }
+
+        function showAddProduct() {
+            editingProductId = null;
+            document.getElementById('modalTitle').textContent = '添加商品';
+            document.getElementById('modalIcon').textContent = '➕';
+            document.getElementById('btnSaveProduct').innerHTML = '<i class="fas fa-plus"></i> 添加';
+            clearProductForm();
+            document.getElementById('productModal').classList.add('show');
+        }
+
+        function editProduct(id) {
+            getProducts().then(function (products) {
+                var product = products.find(function (p) { return p.id === id; });
+                if (!product) return;
+                editingProductId = id;
+                document.getElementById('modalTitle').textContent = '编辑商品';
+                document.getElementById('modalIcon').textContent = '✏️';
+                document.getElementById('btnSaveProduct').innerHTML = '<i class="fas fa-check"></i> 保存修改';
+                document.getElementById('editProductId').value = id;
+                document.getElementById('productName').value = product.name;
+                document.getElementById('productCategory').value = product.category;
+                document.getElementById('productPrice').value = product.price;
+                document.getElementById('productEmoji').value = product.emoji || '';
+                document.getElementById('productDesc').value = product.desc || '';
+                document.getElementById('productModal').classList.add('show');
+            });
+        }
+
+        function closeProductModal() { document.getElementById('productModal').classList.remove('show'); clearProductForm(); }
+        function clearProductForm() {
+            document.getElementById('editProductId').value = '';
+            document.getElementById('productName').value = '';
+            document.getElementById('productCategory').value = 'food';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productEmoji').value = '';
+            document.getElementById('productDesc').value = '';
+        }
+
+        function saveProduct() {
+            var name = document.getElementById('productName').value.trim();
+            var category = document.getElementById('productCategory').value;
+            var price = document.getElementById('productPrice').value.trim();
+            var emoji = document.getElementById('productEmoji').value.trim();
+            var desc = document.getElementById('productDesc').value.trim();
+            if (!name) { showToast('请输入商品名称', 'error'); return; }
+            if (!price) { showToast('请输入价格或描述', 'error'); return; }
+            var id = document.getElementById('editProductId').value;
+            var promise = id ? updateProduct(parseInt(id), { name: name, category: category, price: price, emoji: emoji, desc: desc }) : addProduct({ name: name, category: category, price: price, emoji: emoji, desc: desc });
+            promise.then(function () {
+                showToast(id ? '商品已更新 ✅' : '商品已添加 🎉', 'success');
+                closeProductModal();
+                renderProductsAdmin();
+            });
+        }
+
+        function removeProduct(id) {
+            if (confirm('确定要删除这个商品吗？')) {
+                deleteProduct(id).then(function () { renderProductsAdmin(); showToast('商品已删除', 'success'); });
+            }
+        }
+
+        function showToast(msg, type) {
+            var toast = document.getElementById('toast');
+            toast.querySelector('.toast-text').textContent = msg;
+            var iconEl = toast.querySelector('.toast-icon');
+            iconEl.innerHTML = type === 'error' ? '<i class="fas fa-exclamation"></i>' : '<i class="fas fa-check"></i>';
+            toast.className = 'toast ' + (type || '') + ' show';
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(function () { toast.classList.remove('show'); }, 2200);
+        }
+
+        document.addEventListener('click', function (e) {
+            var modal = document.getElementById('productModal');
+            if (e.target === modal) closeProductModal();
+        });
     </script>
 </body>
+
 </html>

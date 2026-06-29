@@ -1,7 +1,7 @@
 /* ========== 管理页专属样式 ========== */
 
 .admin-header .logo-title {
-    background: linear-gradient(135deg, var(--pink-dark) 0%, var(--purple) 100%);
+    background: linear-gradient(135deg, var(--peach) 0%, var(--pink-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -77,15 +77,23 @@
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 700;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 0 6px;
     animation: badgePopIn 0.3s ease;
 }
 
 @keyframes badgePopIn {
-    0% { transform: scale(0); }
-    60% { transform: scale(1.25); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .tab-btn.active .tab-badge {
@@ -104,8 +112,15 @@
 }
 
 @keyframes panelFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .panel-header {
@@ -196,8 +211,15 @@
 }
 
 @keyframes emptyFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .empty-text {
@@ -223,13 +245,8 @@
     -webkit-backdrop-filter: blur(14px);
     position: relative;
     overflow: hidden;
-    animation: orderCardIn 0.4s ease;
 }
 
-@keyframes orderCardIn {
-    from { opacity: 0; transform: translateY(15px) scale(0.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
 
 .order-card::before {
     content: '';
@@ -277,7 +294,9 @@
     gap: 6px;
 }
 
-.order-time i { color: var(--pink); }
+.order-time i {
+    color: var(--pink);
+}
 
 .order-status {
     padding: 5px 14px;
@@ -532,8 +551,13 @@
 }
 
 @keyframes modalFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-overlay.show {
@@ -555,8 +579,15 @@
 }
 
 @keyframes modalIn {
-    from { opacity: 0; transform: translateY(30px) scale(0.92); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .modal-header {
@@ -686,26 +717,24 @@
 }
 
 .btn-outline {
-    padding: 11px 24px;
-    background: white;
-    color: var(--text-primary);
-    border: 1.5px solid rgba(245, 166, 35, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 18px;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 0.92rem;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-flex;
+    font-size: 0.95rem;
+    display: flex;
     align-items: center;
     gap: 6px;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
 }
 
 .btn-outline:hover {
-    border-color: var(--pink);
-    color: var(--pink-dark);
+    background: rgba(255,255,255,0.4);
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(245, 166, 35, 0.15);
 }
 
 /* ========== 响应式 ========== */
@@ -721,7 +750,9 @@
         flex-direction: column;
     }
 
-    .tab-icon { font-size: 1rem; }
+    .tab-icon {
+        font-size: 1rem;
+    }
 
     .admin-tabs {
         gap: 6px;

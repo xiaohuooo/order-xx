@@ -85,132 +85,6 @@
     {
       "items": [
         {
-          "productId": 1,
-          "name": "冰淇淋",
-          "price": "一个抱抱",
-          "emoji": "🍦",
-          "qty": 1
-        }
-      ],
-      "note": "🔑 终极云同步测试！",
-      "status": "done",
-      "id": "od_1780560586230",
-      "_firestoreId": "od_1780560586230",
-      "time": "2026-06-04T08:09:46.230Z",
-      "timeDisplay": "2026/6/4 16:09:46"
-    },
-    {
-      "items": [
-        {
-          "productId": 9,
-          "name": "芒果冰沙",
-          "emoji": "🥭",
-          "qty": 1,
-          "price": "说爱我"
-        }
-      ],
-      "note": "异地恋云同步终极测试！🥭",
-      "status": "done",
-      "id": "od_1780560714316",
-      "_firestoreId": "od_1780560714316",
-      "time": "2026-06-04T08:11:54.316Z",
-      "timeDisplay": "2026/6/4 16:11:54"
-    },
-    {
-      "items": [
-        {
-          "productId": 4,
-          "name": "打视频电话",
-          "emoji": "📹",
-          "qty": 1,
-          "price": "免费"
-        },
-        {
-          "productId": 7,
-          "name": "抱抱",
-          "emoji": "🤗",
-          "qty": 2,
-          "price": "免费"
-        }
-      ],
-      "note": "想你了！打视频然后抱抱~ 💕",
-      "status": "done",
-      "id": "od_1780560770817",
-      "_firestoreId": "od_1780560770817",
-      "time": "2026-06-04T08:12:50.817Z",
-      "timeDisplay": "2026/6/4 16:12:50"
-    },
-    {
-      "items": [
-        {
-          "productId": 1,
-          "name": "冰淇淋",
-          "emoji": "🍦",
-          "qty": 1,
-          "price": "一个抱抱"
-        }
-      ],
-      "note": "全链路测试",
-      "status": "done",
-      "id": "od_1780560928321",
-      "_firestoreId": "od_1780560928321",
-      "time": "2026-06-04T08:15:28.321Z",
-      "timeDisplay": "2026/6/4 16:15:28"
-    },
-    {
-      "items": [
-        {
-          "productId": 6,
-          "name": "分享日常",
-          "price": "免费",
-          "emoji": "📸",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561150367",
-      "_firestoreId": "od_1780561150367",
-      "time": "2026-06-04T08:19:10.367Z",
-      "timeDisplay": "2026/6/4 16:19:10"
-    },
-    {
-      "items": [
-        {
-          "productId": 12,
-          "name": "巧克力",
-          "price": "一个亲亲",
-          "emoji": "🍫",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561266088",
-      "_firestoreId": "od_1780561266088",
-      "time": "2026-06-04T08:21:06.088Z",
-      "timeDisplay": "2026/6/4 16:21:06"
-    },
-    {
-      "items": [
-        {
-          "productId": 5,
-          "name": "一起散步",
-          "price": "30分钟",
-          "emoji": "🚶",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780561322264",
-      "_firestoreId": "od_1780561322264",
-      "time": "2026-06-04T08:22:02.264Z",
-      "timeDisplay": "2026/6/4 16:22:02"
-    },
-    {
-      "items": [
-        {
           "productId": 7,
           "name": "抱抱",
           "price": "免费",
@@ -228,78 +102,6 @@
     {
       "items": [
         {
-          "productId": 4,
-          "name": "📹打视频",
-          "emoji": "📹",
-          "qty": 1,
-          "price": "免费"
-        },
-        {
-          "productId": 7,
-          "name": "🤗抱抱",
-          "emoji": "🤗",
-          "qty": 2,
-          "price": "免费"
-        }
-      ],
-      "note": "跨域同步终测-Surge端",
-      "status": "done",
-      "id": "od_1780566218688",
-      "_firestoreId": "od_1780566218688",
-      "time": "2026-06-04T09:43:38.688Z",
-      "timeDisplay": "2026/6/4 17:43:38"
-    },
-    {
-      "items": [
-        {
-          "productId": 1,
-          "name": "冰淇淋",
-          "price": "一张美照",
-          "emoji": "🍦",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575692856",
-      "_firestoreId": "od_1780575692856",
-      "time": "2026-06-04T12:21:32.856Z",
-      "timeDisplay": "2026/6/4 20:21:32"
-    },
-    {
-      "items": [
-        {
-          "productId": 6,
-          "name": "分享日常",
-          "price": "免费",
-          "emoji": "📸",
-          "qty": 1
-        },
-        {
-          "productId": 5,
-          "name": "一起散步",
-          "price": "30分钟",
-          "emoji": "🚶",
-          "qty": 1
-        },
-        {
-          "productId": 9,
-          "name": "随机奶茶",
-          "price": "说爱我",
-          "emoji": "🥭",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575727333",
-      "_firestoreId": "od_1780575727333",
-      "time": "2026-06-04T12:22:07.333Z",
-      "timeDisplay": "2026/6/4 20:22:07"
-    },
-    {
-      "items": [
-        {
           "productId": 8,
           "name": "一起追剧",
           "price": "2小时",
@@ -307,48 +109,14 @@
           "qty": 1
         }
       ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575838518",
-      "_firestoreId": "od_1780575838518",
-      "time": "2026-06-04T12:23:58.518Z",
-      "timeDisplay": "2026/6/4 20:23:58"
-    },
-    {
-      "items": [
-        {
-          "productId": 8,
-          "name": "一起追剧",
-          "price": "2小时",
-          "emoji": "📺",
-          "qty": 4
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780575896230",
-      "_firestoreId": "od_1780575896230",
-      "time": "2026-06-04T12:24:56.230Z",
-      "timeDisplay": "2026/6/4 20:24:56"
-    },
-    {
-      "items": [
-        {
-          "productId": 4,
-          "name": "打视频电话",
-          "price": "免费",
-          "emoji": "📹",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780577941778",
-      "_firestoreId": "od_1780577941778",
-      "time": "2026-06-04T12:59:01.778Z",
-      "timeDisplay": "2026/6/4 20:59:01"
+      "note": "甄嬛传",
+      "status": "pending",
+      "id": "od_1782716045424",
+      "_firestoreId": "od_1782716045424",
+      "time": "2026-06-29T06:54:05.424Z",
+      "timeDisplay": "2026/6/29 14:54:05"
     }
   ],
-  "tk1": "ghp_cwNvByD8dfoktJej",
-  "tk2": "3Dw56UtD4GB7Ce2LVoJE"
+  "tk1": "ghp_aOxRVn2sJJ6Hm4Idm",
+  "tk2": "2EjcvoiShfpK00yWzOg"
 }
