@@ -208,23 +208,6 @@
     {
       "items": [
         {
-          "productId": 4,
-          "name": "打视频电话",
-          "price": "免费",
-          "emoji": "📹",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "done",
-      "id": "od_1780577941778",
-      "_firestoreId": "od_1780577941778",
-      "time": "2026-06-04T12:59:01.778Z",
-      "timeDisplay": "2026/6/4 20:59:01"
-    },
-    {
-      "items": [
-        {
           "productId": 8,
           "name": "一起追剧",
           "price": "2小时",
