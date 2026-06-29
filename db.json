@@ -115,6 +115,58 @@
       "_firestoreId": "od_1782719152290",
       "time": "2026-06-29T07:45:52.290Z",
       "timeDisplay": "2026/6/29 15:45:52"
+    },
+    {
+      "items": [
+        {
+          "productId": 7,
+          "name": "抱抱",
+          "price": "免费",
+          "emoji": "🤗",
+          "qty": 1
+        },
+        {
+          "productId": 8,
+          "name": "一起追剧",
+          "price": "2小时",
+          "emoji": "📺",
+          "qty": 1
+        },
+        {
+          "productId": 6,
+          "name": "分享日常",
+          "price": "免费",
+          "emoji": "📸",
+          "qty": 1
+        },
+        {
+          "productId": 5,
+          "name": "一起散步",
+          "price": "30分钟",
+          "emoji": "🚶",
+          "qty": 1
+        },
+        {
+          "productId": 4,
+          "name": "打视频电话",
+          "price": "免费",
+          "emoji": "📹",
+          "qty": 1
+        },
+        {
+          "productId": 3,
+          "name": "小蛋糕",
+          "price": "陪我打游戏两局",
+          "emoji": "🍰",
+          "qty": 1
+        }
+      ],
+      "note": "电话是正在打的，日常是不分享的，电视是不想看的，亲也是亲不到的",
+      "status": "pending",
+      "id": "od_1782742208754",
+      "_firestoreId": "od_1782742208754",
+      "time": "2026-06-29T14:10:08.755Z",
+      "timeDisplay": "2026/6/29 22:10:08"
     }
   ],
   "tk1": "ghp_aOxRVn2sJJ6Hm4Idm",
