@@ -185,7 +185,7 @@
       "timeDisplay": "2026/6/29 22:10:08"
     },
     {
-      "id": "od_1782807352856",
+      "id": "od_1782807129258",
       "items": [
         {
           "productId": 1,
@@ -197,9 +197,33 @@
       ],
       "note": "",
       "status": "pending",
-      "time": "2026-06-30T08:15:52.856Z",
-      "timeDisplay": "2026/06/30 16:15:52",
-      "_firestoreId": "od_1782807352856"
+      "time": "2026-06-30T08:12:09.258Z",
+      "timeDisplay": "2026/06/30 16:12:09",
+      "_firestoreId": "od_1782807129258"
+    },
+    {
+      "id": "od_1782807371310",
+      "items": [
+        {
+          "productId": 1,
+          "name": "冰淇淋",
+          "price": "一张美照",
+          "emoji": "🍦",
+          "qty": 1
+        },
+        {
+          "productId": 2,
+          "name": "随机奶茶(可备注)",
+          "price": "亲一口",
+          "emoji": "🧋",
+          "qty": 1
+        }
+      ],
+      "note": "",
+      "status": "pending",
+      "time": "2026-06-30T08:16:11.310Z",
+      "timeDisplay": "2026/06/30 16:16:11",
+      "_firestoreId": "od_1782807371310"
     }
   ]
 }
