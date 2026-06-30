@@ -87,6 +87,14 @@
       "emoji": "😗",
       "desc": "就要亲亲！",
       "id": 15
+    },
+    {
+      "name": "来武汉",
+      "category": "activity",
+      "price": "免费",
+      "emoji": "🏠",
+      "desc": "快来武汉！",
+      "id": 16
     }
   ],
   "orders": [
