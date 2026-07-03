@@ -208,23 +208,6 @@
       "time": "2026-07-03T08:15:38.621Z",
       "timeDisplay": "2026/07/03 16:15:38",
       "_firestoreId": "od_1783066538621"
-    },
-    {
-      "id": "od_1783069126321",
-      "items": [
-        {
-          "productId": 17,
-          "name": "鸭头",
-          "price": "免费",
-          "emoji": "🦆",
-          "qty": 1
-        }
-      ],
-      "note": "",
-      "status": "pending",
-      "time": "2026-07-03T08:58:46.321Z",
-      "timeDisplay": "2026/07/03 16:58:46",
-      "_firestoreId": "od_1783069126321"
     }
   ]
 }
