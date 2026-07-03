@@ -200,6 +200,23 @@
       "time": "2026-07-03T08:15:38.621Z",
       "timeDisplay": "2026/07/03 16:15:38",
       "_firestoreId": "od_1783066538621"
+    },
+    {
+      "id": "od_1783067062060",
+      "items": [
+        {
+          "productId": 1,
+          "name": "冰淇淋",
+          "price": "一张美照",
+          "emoji": "🍦",
+          "qty": 1
+        }
+      ],
+      "note": "",
+      "status": "pending",
+      "time": "2026-07-03T08:24:22.060Z",
+      "timeDisplay": "2026/07/03 16:24:22",
+      "_firestoreId": "od_1783067062060"
     }
   ]
 }
