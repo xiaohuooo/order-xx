@@ -95,6 +95,14 @@
       "emoji": "🏠",
       "desc": "快来武汉！",
       "id": 16
+    },
+    {
+      "id": 17,
+      "name": "鸭头",
+      "price": "10张美照！",
+      "emoji": "🦆",
+      "desc": "10张美照！",
+      "category": "food"
     }
   ],
   "orders": [
