@@ -99,107 +99,21 @@
   ],
   "orders": [
     {
+      "id": "od_1783066538621",
       "items": [
         {
-          "productId": 8,
-          "name": "一起追剧",
-          "price": "2小时",
-          "emoji": "📺",
+          "productId": 12,
+          "name": "巧克力",
+          "price": "一个亲亲",
+          "emoji": "🍫",
           "qty": 1
         }
       ],
-      "note": "甄嬛传",
+      "note": "",
       "status": "pending",
-      "id": "od_1782716045424",
-      "_firestoreId": "od_1782716045424",
-      "time": "2026-06-29T06:54:05.424Z",
-      "timeDisplay": "2026/6/29 14:54:05"
-    },
-    {
-      "items": [
-        {
-          "productId": 14,
-          "name": "随便饭(可备注)",
-          "price": "十个亲亲",
-          "emoji": "",
-          "qty": 1
-        }
-      ],
-      "note": "十个亲亲！！！？我要吃汉堡",
-      "status": "pending",
-      "id": "od_1782719152290",
-      "_firestoreId": "od_1782719152290",
-      "time": "2026-06-29T07:45:52.290Z",
-      "timeDisplay": "2026/6/29 15:45:52"
-    },
-    {
-      "items": [
-        {
-          "productId": 7,
-          "name": "抱抱",
-          "price": "免费",
-          "emoji": "🤗",
-          "qty": 1
-        },
-        {
-          "productId": 8,
-          "name": "一起追剧",
-          "price": "2小时",
-          "emoji": "📺",
-          "qty": 1
-        },
-        {
-          "productId": 6,
-          "name": "分享日常",
-          "price": "免费",
-          "emoji": "📸",
-          "qty": 1
-        },
-        {
-          "productId": 5,
-          "name": "一起散步",
-          "price": "30分钟",
-          "emoji": "🚶",
-          "qty": 1
-        },
-        {
-          "productId": 4,
-          "name": "打视频电话",
-          "price": "免费",
-          "emoji": "📹",
-          "qty": 1
-        },
-        {
-          "productId": 3,
-          "name": "小蛋糕",
-          "price": "陪我打游戏两局",
-          "emoji": "🍰",
-          "qty": 1
-        }
-      ],
-      "note": "电话是正在打的，日常是不分享的，电视是不想看的，亲也是亲不到的",
-      "status": "pending",
-      "id": "od_1782742208754",
-      "_firestoreId": "od_1782742208754",
-      "time": "2026-06-29T14:10:08.755Z",
-      "timeDisplay": "2026/6/29 22:10:08"
-    },
-    {
-      "id": "od_1782802454339",
-      "items": [
-        {
-          "productId": 16,
-          "name": "来武汉",
-          "price": "免费",
-          "emoji": "🏠",
-          "qty": 1
-        }
-      ],
-      "note": "十个亲亲",
-      "status": "done",
-      "time": "2026-06-30T06:54:14.339Z",
-      "timeDisplay": "2026/06/30 14:54:14",
-      "_firestoreId": "od_1782802454339"
+      "time": "2026-07-03T08:15:38.621Z",
+      "timeDisplay": "2026/07/03 16:15:38",
+      "_firestoreId": "od_1783066538621"
     }
   ]
 }
